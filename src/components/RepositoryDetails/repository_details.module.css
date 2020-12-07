@@ -1,0 +1,33 @@
+.repository {
+  padding: 1rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  gap: 1.2rem;
+}
+.avatar {
+  width: 104px;
+}
+
+.info {
+  padding: 0.2rem;
+}
+
+.info_bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.description {
+  margin: 0.8rem 0rem;
+}
+
+.numbers {
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.3rem;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}

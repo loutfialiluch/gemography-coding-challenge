@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { getMostStarredRepos } from "./api";
+
+import RepositoryDetails from "./components/RepositoryDetails/RepositoryDetails";
+
 function App() {
   const [repos, setRepos] = useState([]);
 
@@ -15,7 +18,10 @@ function App() {
 
   return (
     <div className="container">
-      <h1>App</h1>
+      <RepositoryDetails />
+      <RepositoryDetails />
+      <RepositoryDetails />
+      <RepositoryDetails />
     </div>
   );
 }
