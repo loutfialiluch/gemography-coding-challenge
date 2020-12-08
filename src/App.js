@@ -7,6 +7,7 @@ import Loading from "./components/LoadingComponent/Loading";
 
 function App() {
   const [page, setPage] = useState(1);
+  const [error, setError] = useState("");
   const [isloading, setIsLoading] = useState(true);
   const [repos, setRepos] = useState([]);
 
@@ -19,7 +20,8 @@ function App() {
         setRepos((prev) => [...prev, ...items]);
         setIsLoading(false);
       } catch (error) {
-        setIsLoading(true);
+        setIsLoading(false);
+        setError("Data not found !");
         throw error;
       }
     };
@@ -29,7 +31,7 @@ function App() {
 
   const handleScroll = () => {
     window.onscroll = () => {
-      // Checks that the page has scrolled to the bottom
+      // If the condition is satisfied then the scroll has reached the bottom of the page
       if (
         window.innerHeight + document.documentElement.scrollTop ===
         document.documentElement.offsetHeight
@@ -41,9 +43,13 @@ function App() {
 
   return (
     <div className="container">
-      {repos.map((repository) => (
-        <RepositoryDetails key={repository.id} repository={repository} />
-      ))}
+      {repos.length > 0 ? (
+        repos.map((repository) => (
+          <RepositoryDetails key={repository.id} repository={repository} />
+        ))
+      ) : (
+        <h2 className="error-msg">{error}</h2>
+      )}
       {isloading && <Loading />}
     </div>
   );
