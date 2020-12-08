@@ -18,10 +18,9 @@ function App() {
 
   return (
     <div className="container">
-      <RepositoryDetails />
-      <RepositoryDetails />
-      <RepositoryDetails />
-      <RepositoryDetails />
+      {repos.map((repository) => (
+        <RepositoryDetails key={repository.id} repository={repository} />
+      ))}
     </div>
   );
 }
