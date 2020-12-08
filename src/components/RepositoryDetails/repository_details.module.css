@@ -6,6 +6,7 @@
   background-color: var(--primary-color);
   color: var(--secondary-color);
   gap: 1.2rem;
+  border-bottom: 1px solid var(--secondary-color);
 }
 .avatar {
   width: 104px;
@@ -31,4 +32,13 @@
   border-radius: 0.3rem;
   margin-right: 0.5rem;
   padding: 0.25rem 0.5rem;
+}
+
+@media (max-width: 655px) {
+  .repository {
+    padding: 1rem 1.5rem;
+  }
+  .avatar {
+    width: 124px;
+  }
 }
