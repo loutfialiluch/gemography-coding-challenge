@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./repository_details.module.css";
 import moment from "moment";
+import abbreviate from "number-abbreviate";
 
 const RepositoryDetails = ({ repository }) => {
   const {
@@ -21,8 +22,12 @@ const RepositoryDetails = ({ repository }) => {
         <h3>{name}</h3>
         <p className={styles.description}>{description}</p>
         <div className={styles.info_bottom}>
-          <span className={styles.numbers}>Stars : {numberOfStars}</span>
-          <span className={styles.numbers}>Issues : {numberOfIssues}</span>
+          <span className={styles.numbers}>
+            Stars : {abbreviate(numberOfStars, 2)}
+          </span>
+          <span className={styles.numbers}>
+            Issues : {abbreviate(numberOfIssues, 2)}
+          </span>
           <p>
             Submitted {moment(created_at).fromNow()} by {login}
           </p>
